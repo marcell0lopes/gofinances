@@ -1,5 +1,10 @@
 import React from "react";
+
 import { HighlightCard } from "../../components/HighlightCard";
+import {
+  TransactionCard,
+  TransactionCardProps,
+} from "../../components/TransactionCard";
 
 import {
   Icon,
@@ -12,9 +17,52 @@ import {
   UserName,
   UserWrapper,
   HighlightCards,
+  Transactions,
+  Title,
+  TransactionsList,
 } from "./styles";
 
+export interface DataListProps extends TransactionCardProps {
+  id: string;
+}
+
 export function Dashboard() {
+  const data: DataListProps[] = [
+    {
+      id: 1,
+      type: "positive",
+      title: "Desenvolvimento de Site",
+      amount: "R$ 1000,00",
+      category: {
+        name: "Vendas",
+        icon: "dollar-sign",
+      },
+      date: "14/07/2022",
+    },
+    {
+      id: 2,
+      type: "negative",
+      title: "Hamburgueria",
+      amount: "R$ 80,00",
+      category: {
+        name: "Alimentação",
+        icon: "coffee",
+      },
+      date: "13/07/2022",
+    },
+    {
+      id: 3,
+      type: "negative",
+      title: "Aluguel do Apartamento",
+      amount: "R$ 1000,00",
+      category: {
+        name: "Casa",
+        icon: "home",
+      },
+      date: "14/07/2022",
+    },
+  ];
+
   return (
     <Container>
       <Header>
@@ -54,6 +102,15 @@ export function Dashboard() {
           lastTransaction="Última saída dia 03 de abril"
         />
       </HighlightCards>
+
+      <Transactions>
+        <Title>Listagem</Title>
+        <TransactionsList
+          data={data}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => <TransactionCard data={item} />}
+        />
+      </Transactions>
     </Container>
   );
 }
