@@ -1,4 +1,5 @@
 import React from "react";
+import { HighlightCard } from "../../components/HighlightCard";
 
 import {
   Icon,
@@ -10,6 +11,7 @@ import {
   UserGreeting,
   UserName,
   UserWrapper,
+  HighlightCards,
 } from "./styles";
 
 export function Dashboard() {
@@ -31,6 +33,27 @@ export function Dashboard() {
           <Icon name="power" />
         </UserWrapper>
       </Header>
+
+      <HighlightCards>
+        <HighlightCard
+          type="up"
+          title="Entradas"
+          amount="RS 10.666,00"
+          lastTransaction="Última entrada dia 13 de abril"
+        />
+        <HighlightCard
+          type="down"
+          title="Saídas"
+          amount="RS 1.259,00"
+          lastTransaction="Última saída dia 03 de abril"
+        />
+        <HighlightCard
+          type="total"
+          title="Total"
+          amount="RS 9.407,00"
+          lastTransaction="Última saída dia 03 de abril"
+        />
+      </HighlightCards>
     </Container>
   );
 }
