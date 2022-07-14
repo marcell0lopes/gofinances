@@ -1,6 +1,7 @@
 import React from "react";
-import { Text } from "react-native";
+
 import {
+  Icon,
   Container,
   Header,
   UserInfo,
@@ -27,6 +28,7 @@ export function Dashboard() {
               <UserName>Marcello</UserName>
             </User>
           </UserInfo>
+          <Icon name="power" />
         </UserWrapper>
       </Header>
     </Container>
