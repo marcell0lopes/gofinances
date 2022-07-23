@@ -25,8 +25,8 @@ export function Register() {
       </Header>
       <Form>
         <Fields>
-          <Input placeholder="Nome" />
-          <Input placeholder="Preço" />
+          <Input placeholder="Nome" placeholderTextColor="#969cb2" />
+          <Input placeholder="Preço" placeholderTextColor="#969cb2" />
           <TransactionsTypes>
             <TransactionTypeButton
               title="Entrada"
