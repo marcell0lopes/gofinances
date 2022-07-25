@@ -6,6 +6,7 @@ interface Props extends RectButtonProps {
   title: string;
   type: "up" | "down";
   isActive: boolean;
+  onPress: () => void;
 }
 
 const icons = {
