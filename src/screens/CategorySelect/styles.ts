@@ -36,18 +36,21 @@ export const Category = styled.TouchableOpacity<CategoryProps>`
   align-items: center;
 
   background-color: ${({ isActive, theme }) =>
-    isActive ? theme.colors.secondary_light : theme.colors.background};
+    isActive ? theme.colors.secondary : theme.colors.background};
 `;
 
-export const Icon = styled(Feather)`
+export const Icon = styled(Feather)<CategoryProps>`
   font-size: ${RFValue(20)}px;
   margin-right: 16px;
+  color: ${({ theme, isActive }) =>
+    isActive ? theme.colors.shape : theme.colors.title};
 `;
 
-export const Name = styled.Text`
+export const Name = styled.Text<CategoryProps>`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(18)}px;
-  color: ${({ theme }) => theme.colors.title};
+  color: ${({ theme, isActive }) =>
+    isActive ? theme.colors.shape : theme.colors.title};
 `;
 
 export const Separator = styled.View`
