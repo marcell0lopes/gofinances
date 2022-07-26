@@ -3,13 +3,13 @@ export default {
     primary: "#34A0A4",
 
     secondary: "#76C893",
-    secondary_light: "#76C8930f",
+    secondary_light: "#76C8937f",
 
     success: "#82d968",
-    success_light: "rgba(18,164,84,0.5)",
+    success_light: "#82d9687f",
 
     danger: "#E83F5B",
-    danger_light: "rgba(232, 63,91, 0.5)",
+    danger_light: "#E83F5B7f",
 
     shape: "#184E77",
     title: "#eaf2cb",
