@@ -1,20 +1,20 @@
 export default {
   colors: {
-    primary: "#5636D3",
+    primary: "#34A0A4",
 
-    secondary: "#FF872C",
-    secondary_light: "rgba(255,135,44,0.3)",
+    secondary: "#76C893",
+    secondary_light: "#76C8930f",
 
-    success: "#12A454",
+    success: "#82d968",
     success_light: "rgba(18,164,84,0.5)",
 
     danger: "#E83F5B",
     danger_light: "rgba(232, 63,91, 0.5)",
 
-    shape: "#fff",
-    title: "#363F5F",
-    text: "#969cb2",
-    background: "#F0F2F5",
+    shape: "#184E77",
+    title: "#eaf2cb",
+    text: "#f6fae6",
+    background: "#0b304d",
   },
   fonts: {
     regular: "Poppins_400Regular",
