@@ -152,16 +152,6 @@ export function Dashboard() {
     setIsLoading(false);
   }
 
-  useEffect(() => {
-    loadTransactions();
-
-    // async function clearTransactions() {
-    //   await AsyncStorage.removeItem(dataKey);
-    // }
-
-    // clearTransactions();
-  }, []);
-
   useFocusEffect(
     useCallback(() => {
       loadTransactions();

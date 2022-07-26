@@ -1,6 +1,7 @@
 import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 import { Feather } from "@expo/vector-icons";
+
 import {
   BorderlessButton,
   BorderlessButtonProps,
@@ -34,7 +35,14 @@ export const Title = styled.Text`
   font-size: ${RFValue(18)}px;
 `;
 
-export const Content = styled.ScrollView``;
+export const Content = styled.ScrollView.attrs({
+  contentContainerStyle: {
+    paddingHorizontal: 24,
+  },
+  showsVerticalScrollIndicator: false,
+})`
+  flex: 1;
+`;
 
 export const ChartContainer = styled.View`
   width: 100%;

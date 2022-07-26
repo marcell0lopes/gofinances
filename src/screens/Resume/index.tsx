@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useTheme } from "styled-components";
-import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
+import { useFocusEffect } from "@react-navigation/native";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { RFValue } from "react-native-responsive-fontsize";
 import { VictoryPie } from "victory-native";
 import { addMonths, subMonths, format } from "date-fns";
@@ -51,7 +52,6 @@ export function Resume() {
   const theme = useTheme();
 
   function handleDateChange(action: "next" | "prev") {
-    setIsLoading(true);
     if (action === "next") {
       const newDate = addMonths(selectedDate, 1);
       setSelectedDate(newDate);
@@ -62,6 +62,7 @@ export function Resume() {
   }
 
   async function loadData() {
+    setIsLoading(true);
     const dataKey = "@gofinances:transactions";
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
@@ -114,9 +115,11 @@ export function Resume() {
     setIsLoading(false);
   }
 
-  useEffect(() => {
-    loadData();
-  }, [selectedDate]);
+  useFocusEffect(
+    useCallback(() => {
+      loadData();
+    }, [selectedDate])
+  );
 
   return (
     <Container>
@@ -128,14 +131,7 @@ export function Resume() {
           <ActivityIndicator size="large" color={theme.colors.primary} />
         </LoadContainer>
       ) : (
-        <Content
-          contentContainerStyle={{
-            flex: 1,
-            paddingHorizontal: 24,
-            paddingBottom: useBottomTabBarHeight(),
-          }}
-          showsHorizontalScrollIndicator={false}
-        >
+        <Content>
           <MonthSelect>
             <MonthSelectButton onPress={() => handleDateChange("prev")}>
               <MonthSelectIcon name="chevron-left" />
