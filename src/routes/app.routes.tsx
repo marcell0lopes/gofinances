@@ -17,7 +17,9 @@ export function AppRoutes() {
     <Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: theme.colors.secondary,
+        tabBarInactiveBackgroundColor: theme.colors.background,
+        tabBarActiveBackgroundColor: theme.colors.primary,
+        tabBarActiveTintColor: theme.colors.title,
         tabBarInactiveTintColor: theme.colors.text,
         tabBarLabelPosition: "beside-icon",
         tabBarStyle: {
