@@ -13,13 +13,8 @@ export default {
 
     shape: "#fff",
     title: "#23273c",
-    text: "#e1e0e6",
+    text: "#a3a2a8",
     background: "#f7f7fa",
-
-    arrow: "#c8c7cd",
-    date: "#e1e0e6",
-    backgroundTwo: "#f7f7fa",
-    white: "#fff",
   },
   fonts: {
     regular: "Poppins_400Regular",
