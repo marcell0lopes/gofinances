@@ -56,3 +56,5 @@ dist/
 
 # README only for development right now
 README.md
+
+.env
