@@ -165,7 +165,6 @@ export function Dashboard() {
       },
     });
 
-    console.log(expenseLastTransaction);
     setIsLoading(false);
   }
 
