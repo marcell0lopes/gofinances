@@ -58,12 +58,20 @@ export function Dashboard() {
     collection: TransactionCardProps[],
     type: "positive" | "negative"
   ) {
+    const collectionFiltered = collection.filter(
+      (transaction) => transaction.type === type
+    );
+
+    if (collectionFiltered.length === 0) {
+      return "no date";
+    }
+
     const lastTransaction = new Date(
       Math.max.apply(
         Math,
-        collection
-          .filter((transaction) => transaction.type === type)
-          .map((transaction) => new Date(transaction.date).getTime())
+        collectionFiltered.map((transaction) =>
+          new Date(transaction.date).getTime()
+        )
       )
     );
 
@@ -76,7 +84,7 @@ export function Dashboard() {
   }
 
   async function loadTransactions() {
-    const dataKey = "@gofinances:transactions";
+    const dataKey = `@gofinances:transactions_user:${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const transactions = response ? JSON.parse(response) : [];
 
@@ -133,14 +141,20 @@ export function Dashboard() {
           style: "currency",
           currency: "BRL",
         }),
-        lastTransaction: `Ultima entrada dia ${entriesLastTransaction}`,
+        lastTransaction:
+          entriesLastTransaction === "no date"
+            ? "Não há entradas"
+            : `Ultima entrada dia ${entriesLastTransaction}`,
       },
       expense: {
         amount: expenseTotal.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL",
         }),
-        lastTransaction: `Ultima saída dia ${expenseLastTransaction}`,
+        lastTransaction:
+          expenseLastTransaction === "no date"
+            ? "Não há saídas"
+            : `Ultima saída dia ${expenseLastTransaction}`,
       },
       total: {
         amount: totalAmount.toLocaleString("pt-BR", {
@@ -151,6 +165,7 @@ export function Dashboard() {
       },
     });
 
+    console.log(expenseLastTransaction);
     setIsLoading(false);
   }
 
