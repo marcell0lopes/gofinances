@@ -54,7 +54,4 @@ buck-out/
 web-build/
 dist/
 
-# README only for development right now
-README.md
-
 .env
