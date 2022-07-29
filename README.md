@@ -2,6 +2,14 @@
 
 # **GoFinances**
 
+<div>
+
+|                                                     Linguagem                                                     |                                                    Framework                                                     |
+| :---------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white) | ![ReactNative](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) |
+
+</div>
+
 ### GoFinances é um app feito em **React Native com TypeScript (Expo) e Styled Components** seguindo a trilha Ignite do curso Rocket Seat
 
 ---
