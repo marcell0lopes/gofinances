@@ -4,12 +4,12 @@
 
 ### GoFinances é um app feito em **React Native com TypeScript (Expo) e Styled Components** seguindo a trilha Ignite do curso Rocket Seat
 
+---
+
 ## Preview:
 
 <img src="./src/assets/gofinances-login.jpeg" height="500px"  />
 <img src="./src/assets/gofinances-preview.gif" height="500px"  />
-
----
 
 </div>
 
@@ -26,8 +26,6 @@
 - Expo Splash Screen
 - TypeScript
 - Date-FNS
-
----
 
 ## **To do:**
 
